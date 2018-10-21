@@ -31,5 +31,17 @@
 		"create": false,
 		"prefix": "ps_",
 		"engine": "InnoDB"
+	},
+
+	"vhost": {
+		"ip": "*",
+		"port": "80",
+		"DocumentRoot": "",
+		"DirectoryIndex": "index.php",
+		"directory": {
+			"Options": "All",
+			"AllowOverride": "All",
+			"Require": "all granted"
+		}
 	}
 }
