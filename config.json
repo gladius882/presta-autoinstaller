@@ -1,0 +1,35 @@
+{
+	"folders": {
+		"www_path": "C:\\xampp\\htdocs",
+		"apache_path": "C:\\xampp\\apache",
+		"mysql_path": "C:\\xampp\\mysql"
+	},
+
+	"zip_path": "D:\\prestashop_1.6.1.18.zip",
+
+	"presta": {
+		"domain": "localhost",
+		"language": "en",
+		"timezone": "Europe/Paris",
+		"name": "PrestaShop",
+		"country": "fr",
+		"firstname": "John",
+		"lastname": "Doe",
+		"password": "0123456789",
+		"email": "pub@prestashop.com",
+		"license": 0,
+		"newsletter": 1,
+		"send_email": 1
+	},
+
+	"db": {
+		"server": "localhost",
+		"name": "prestashop",
+		"user": "root",
+		"password": "",
+		"clear": true,
+		"create": false,
+		"prefix": "ps_",
+		"engine": "InnoDB"
+	}
+}
