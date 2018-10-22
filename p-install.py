@@ -1,40 +1,18 @@
-import ctypes
-import os
-import sys
-import json
-import zipfile
-
 from functions import *
+import sys
 
-try:
-	is_admin = os.getuid() == 0
-except AttributeError:
-	is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
+# if isAdmin() == False:
+# 	print("Hey! I need admin privileges to do my job!")
+# 	sys.exit(-1)
 
+config = getConfiguration()
 
+# virtualHostAdd(config['vhost'])
+# createWWWFolder(config['vhost']['DocumentRoot'])
 
-# print(str(sys.argv))
+unzip(config['zip_path'], "C:\\Users\\gladius882\\Desktop\\test" )
 
-# default values
-
-configFile = open("config.json", "r")
-configArray = json.loads(configFile.read())
-
-if configArray['vhost']['DocumentRoot'] == '':
-	configArray['vhost']['DocumentRoot'] = """%s\\%s""" % (
-		configArray['folders']['www_path'],
-		configArray['presta']['domain']
-	)
-
-VirtualHostAdd(configArray['vhost'])
-
-
-# zipObj = zipfile.ZipFile(zip_path)
-# for file in zipObj.namelist():
-# 	if file.startswith('prestashop/'):
-# 		zipObj.extract(file, 'C:\\Users\\gladius882\\test')
-# zipObj.close()
-
-
-# print(var)
-
+# unzip(
+# 	configArray['zip_path'],
+# 	'C:\\Users\\gladius882\\Desktop\\test'
+# )
