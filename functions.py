@@ -10,7 +10,7 @@ def isAdmin():
 
 	return is_admin
 
-def getConfiguration():
+def getConfiguration(args):
 	configFile = open("config.json", "r")
 	configArray = json.loads(configFile.read())
 
@@ -48,8 +48,14 @@ def unzip(source, destination):
 		zip_info.filename = zip_info.filename.replace('prestashop/', '')
 		zip.extract(zip_info, destination)
 	zip.close()
-	# zipObj = zipfile.ZipFile(source)
-	# for file in zipObj.namelist():
-	# 	if file.startswith('prestashop/'):
-	# 		zipObj.extract(file, destination)
-	# zipObj.close()
+
+def restartApache():
+	input("Please restart or run Apache service and press Enter to continue")
+
+def createDatabase(db):
+	sql = "CREATE DATABASE IF NOT EXISTS `" + db['name'] + '`'
+	command = db['mysql_bin'] + " -v --user="+db['user']+" -e \""+sql+"\""
+	os.system(command)
+
+def runPrestaInstaller(presta):
+	command = ""

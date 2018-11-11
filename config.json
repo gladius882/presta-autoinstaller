@@ -1,17 +1,10 @@
 {
 	"zip_path": "D:\\prestashop_1.6.1.18.zip",
-
-	/**
-	 * Set which method will be used to unzip presta's archive
-	 * "default"
-	 * "7z"
-	 */
 	"unzip_method": "default",
 
 	"folders": {
 		"www_path": "C:\\xampp\\htdocs",
-		"apache_path": "C:\\xampp\\apache",
-		"mysql_path": "C:\\xampp\\mysql"
+		"apache_path": "C:\\xampp\\apache"
 	},
 
 	"presta": {
@@ -37,7 +30,8 @@
 		"clear": true,
 		"create": false,
 		"prefix": "ps_",
-		"engine": "InnoDB"
+		"engine": "InnoDB",
+		"mysql_bin": "C:\\xampp\\mysql\\bin\\mysql.exe"
 	},
 
 	"vhost": {

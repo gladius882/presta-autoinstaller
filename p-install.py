@@ -5,14 +5,10 @@ import sys
 # 	print("Hey! I need admin privileges to do my job!")
 # 	sys.exit(-1)
 
-config = getConfiguration()
-
+config = getConfiguration(sys.argv)
 # virtualHostAdd(config['vhost'])
 # createWWWFolder(config['vhost']['DocumentRoot'])
-
-unzip(config['zip_path'], "C:\\Users\\gladius882\\Desktop\\test" )
-
-# unzip(
-# 	configArray['zip_path'],
-# 	'C:\\Users\\gladius882\\Desktop\\test'
-# )
+# unzip(config['zip_path'], "C:\\Users\\gladius882\\Desktop\\test" )
+restartApache()
+createDatabase(config["db"])
+runPrestaInstaller(config["presta"])
